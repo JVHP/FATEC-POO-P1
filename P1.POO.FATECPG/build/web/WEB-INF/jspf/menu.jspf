@@ -1,0 +1,14 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+
+<nav class="navbar justify-content-center">
+    <ul class="nav-item">
+        <a class="nav-link" href="index.jsp">Inicio</a>
+    </ul>
+    <ul class="nav-item">
+        <a class="nav-link" href="sobre.jsp">Sobre</a>
+    </ul>
+    <ul class="nav-item">
+        <a class="nav-link" href="disciplinas.jsp">Disciplinas</a>
+    </ul>
+</nav>

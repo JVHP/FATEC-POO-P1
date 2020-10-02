@@ -50,7 +50,7 @@ public class Disciplinas {
         disciplinas = list;
     }
     
-    public void setterList(Disciplinas disc){
+    public void setterList(Disciplinas disc) {
         disciplinas.add(disc);
     }
     
