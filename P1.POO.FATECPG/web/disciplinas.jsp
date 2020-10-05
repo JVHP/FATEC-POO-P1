@@ -49,7 +49,7 @@
                     <td>
                         <form method="post">
                             <%= arrayDisci.getList().get(i).getNota()%>
-                            <input type="number" name="nota" value="0.0" step="0.1" max="10" min="0" style="width: 50px; background-color: #232323"/><br/>
+                            <input type="number" name="nota" value="0.0" step="0.1" max="10" min="0" style="width: 50px; background-color: #232323" required/><br/>
                             <input type="submit" name="alterar" value="Alterar Nota"/>
                             <input type="hidden" name="i" value="<%= i%>"/>
                         </form>
