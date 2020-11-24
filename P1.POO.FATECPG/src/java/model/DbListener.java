@@ -34,7 +34,7 @@ public class DbListener implements ServletContextListener {
             exceptionMessage = ex.getLocalizedMessage();
         }finally{
             try{stmt.close();}catch(Exception ex2){}
-            try{stmt.close();}catch(Exception ex2){}
+            try{con.close();}catch(Exception ex2){}
             
         }
     }
