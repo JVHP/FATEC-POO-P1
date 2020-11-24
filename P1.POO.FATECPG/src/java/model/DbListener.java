@@ -8,6 +8,7 @@ package model;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import java.sql.*;
+import p1.poo.fatecpg.noturno.Disciplinas;
 
 /**
  * Web application lifecycle listener.
@@ -30,6 +31,15 @@ public class DbListener implements ServletContextListener {
             Class.forName(CLASS_NAME);
             con = DriverManager.getConnection(DB_URL);
             stmt = con.createStatement();
+            stmt.execute(Disciplinas.getCreateStatement());
+            if(Disciplinas.getList().isEmpty()){
+                stmt.execute("INSERT INTO disciplinas VALUES("
+                        + "'Nenhuma',"
+                        + "'Disciplina Matriculada',"
+                        + "0,"
+                        + "0,"
+                        + ");");
+            }
         } catch (Exception ex) {
             exceptionMessage = ex.getLocalizedMessage();
         }finally{

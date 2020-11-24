@@ -9,7 +9,7 @@ public class Disciplinas {
     private int ciclo;
     private double nota;        
 
-    public ArrayList<Disciplinas> getList() throws Exception {
+    public static ArrayList<Disciplinas> getList() throws Exception {
         ArrayList<Disciplinas> lst = new ArrayList<>();
         Connection con = null;Statement stmt = null;ResultSet rs = null;
         Exception methodException = null;
