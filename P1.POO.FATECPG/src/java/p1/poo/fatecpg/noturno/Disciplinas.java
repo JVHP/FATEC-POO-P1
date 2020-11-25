@@ -68,9 +68,9 @@ public class Disciplinas {
         Exception methodException = null;
         try {
             con = DbListener.getConnection();
-            stmt = con.prepareStatement("INSERT INTO disciplinas "
-                    + "SET nome=?, ementa=?, ciclo=?, nota=? "
-                    + "WHERE nome=?");
+            stmt = con.prepareStatement("UPDATE disciplinas "
+                    + "SET nome = ?, ementa = ?, ciclo = ?, nota = ? "
+                    + "WHERE nome = ?;");
             stmt.setString(1, nome);
             stmt.setString(2, ementa);
             stmt.setInt(3, ciclo);
@@ -92,7 +92,7 @@ public class Disciplinas {
         Exception methodException = null;
         try {
             con = DbListener.getConnection();
-            stmt = con.prepareStatement("DELETE FROM disciplinas WHERE nome=?");
+            stmt = con.prepareStatement("DELETE FROM disciplinas WHERE nome = ?");
             stmt.setString(1, nome);
             stmt.execute();
         } catch (Exception ex) {
@@ -138,7 +138,7 @@ public class Disciplinas {
     }
     
     public static String getCreateStatement(){
-        return "CREATE TABLE disciplinas("
+        return "CREATE TABLE IF NOT EXISTS disciplinas("
                 + "nome VARCHAR(200) PRIMARY KEY,"
                 + "ementa VARCHAR(750) NOT NULL,"
                 + "ciclo NUMBER(2) NOT NULL,"
