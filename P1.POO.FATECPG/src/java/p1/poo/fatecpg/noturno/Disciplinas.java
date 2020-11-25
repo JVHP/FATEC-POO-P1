@@ -39,6 +39,7 @@ public class Disciplinas {
             try{con.close();}catch(Exception ex2){}
             try{rs.close();}catch(Exception ex2){}
         }
+        if(methodException!=null)throw methodException;
         return lst;
     }
     public static void Insert(String nome, String ementa, int ciclo, double nota) throws Exception{
@@ -59,6 +60,7 @@ public class Disciplinas {
             try{con.close();}catch(Exception ex2){}
             try{rs.close();}catch(Exception ex2){}
         }
+        if(methodException!=null)throw methodException;
     }
     
     public static void Update(String nomeAntigo, String nome, String ementa, int ciclo, double nota) throws Exception{
@@ -82,6 +84,7 @@ public class Disciplinas {
             try{con.close();}catch(Exception ex2){}
             try{rs.close();}catch(Exception ex2){}
         }
+        if(methodException!=null)throw methodException;
     }
     
     public static void Delete(String nome) throws Exception{
@@ -99,6 +102,7 @@ public class Disciplinas {
             try{con.close();}catch(Exception ex2){}
             try{rs.close();}catch(Exception ex2){}
         }
+        if(methodException!=null)throw methodException;
     }
     
     public double getNota() {
