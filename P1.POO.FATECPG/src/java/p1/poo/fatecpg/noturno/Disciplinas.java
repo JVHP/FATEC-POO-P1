@@ -17,7 +17,7 @@ public class Disciplinas {
         this.nota = nota;
     }
 
-    public ArrayList<Disciplinas> getList()throws Exception{
+    public static ArrayList<Disciplinas> getList()throws Exception{
         ArrayList<Disciplinas> lst = new ArrayList<>();
         Connection con = null; Statement stmt = null; ResultSet rs = null;
         Exception methodException = null;
@@ -69,7 +69,9 @@ public class Disciplinas {
         Exception methodException = null;
         try{
             con = DbListener.getConnection();
-            stmt = con.prepareStatement("UPDATE disciplinas SET nome=?, ementa=?, ciclo=?, nota=? WHERE nome=?;");
+            stmt = con.prepareStatement("UPDATE disciplinas "
+                    + "SET nome=?, ementa=?, ciclo=?, nota=? "
+                    + "WHERE nome=?;");
             stmt.setString(1, nome);
             stmt.setString(2, ementa);
             stmt.setInt(3, ciclo);
