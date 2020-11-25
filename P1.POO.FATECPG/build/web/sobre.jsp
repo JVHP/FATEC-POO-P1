@@ -1,4 +1,3 @@
-<%@page import="web.DbListener"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -16,11 +15,6 @@
         <p>Nome: José Vinícius Henrique Pereira</p>
         <p>RA: 1290481913041</p>
         <p>Repositório do GitHub: <a href="https://github.com/JVHP?tab=repositories">https://github.com/JVHP?tab=repositories</a></p>
-        <%if(DbListener.exceptionMessage==null){%>
-        <p>Banco de Dados Criado com Sucesso</p>
-        <%}else{%>
-        <p style="color: red">Erro: <%= DbListener.exceptionMessage%></p>
-        <%}%>
         </div>
     </body>
 </html>
