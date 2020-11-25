@@ -24,7 +24,7 @@ public class DbListener implements ServletContextListener {
     
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-        Connection con; Statement stmt = null;
+        Connection con = null; Statement stmt = null;
         try{
             Class.forName(CLASS_NAME);
             con = DriverManager.getConnection(DB_URL);
