@@ -8,6 +8,7 @@ package web;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import java.sql.*;
+import p1.poo.fatecpg.noturno.Disciplinas;
 
 /**
  * Web application lifecycle listener.
@@ -29,6 +30,50 @@ public static Connection getConnection()throws Exception{
             Class.forName(CLASS_NAME);
             con = DriverManager.getConnection(DB_URL);
             stmt = con.createStatement();
+            stmt.execute(Disciplinas.getCreateStatment());
+            if(Disciplinas.getList().isEmpty()){
+            stmt.execute("INSERT INTO disciplinas VALUES("
+                                    +"'Banco de Dados' ,"
+                                    +"'Conceitos Banco de Dados',"
+                                    +"4,"
+                                    +"10);");
+
+            stmt.execute("INSERT INTO disciplinas VALUES("
+                                    +"'Engenharia de Software III' ,"
+                                    +"'Conceitos, evolução e importância de arquitetura de software',"
+                                    +"4,"
+                                    +"10);");
+
+            stmt.execute("INSERT INTO disciplinas VALUES("
+                                    +"'Programacao Orientada a Objetos' ,"
+                                    +"'Conceitos e evolução da tecnologia de orientação a objetos.',"
+                                    +"4,"
+                                    +"10);");
+
+            stmt.execute("INSERT INTO disciplinas VALUES("
+                                    +"'Linguagem de Programacao IV - INTERNET' ,"
+                                    +"'Comandos de linguagens usadas na construcao e estruturacao de sites para a Web',"
+                                    +"4,"
+                                    +"10);");
+
+            stmt.execute("INSERT INTO disciplinas VALUES("
+                                    +"'Seguranca da Informacao' ,"
+                                    +"'Requisitos de seguranca de aplicacoes, de base de dados e de comunicacoes.',"
+                                    +"4,"
+                                    +"10);");
+
+            stmt.execute("INSERT INTO disciplinas VALUES("
+                                    +"'Sistemas Operacionais II' ,"
+                                    +"'Apresentacao de um sistema operacional especifico utilizado em ambiente corporativo.',"
+                                    +"4,"
+                                    +"10);");
+
+            stmt.execute("INSERT INTO disciplinas VALUES("
+                                    +"'Metodologia da Pesquisa Cientifico-Tecnologica' ,"
+                                    +"'O Papel da ciência e da tecnologia. Tipos de conhecimento. Metodo e tecnica.',"
+                                    +"4,"
+                                    +"10);");
+            }
         } catch (Exception ex) {
         } finally{
             try{stmt.close();}catch(Exception ex2){}
